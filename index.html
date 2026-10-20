@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS Gaming Hub</title>
+  
+  <!-- Favicon / Website Avatar -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- 1. TÍCH HỢP ANIMATE.CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- 2. TÍCH HỢP AOS (ANIMATE ON SCROLL) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <!-- 3. MAIN CUSTOM CSS (HIỆU ỨNG :HOVER, :FOCUS TỰ VIẾT) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= PURE CSS CONTROLLERS (CHECKBOXES & RADIOS) ================= -->
+  <!-- Navigation Tabs -->
+  <input type="radio" name="main-nav" id="tab-home" class="css-controller" hidden>
+  <input type="radio" name="main-nav" id="tab-library" class="css-controller" hidden>
+  <input type="radio" name="main-nav" id="tab-store" class="css-controller" checked hidden>
+  <input type="radio" name="main-nav" id="tab-arcade" class="css-controller" hidden>
+  <input type="radio" name="main-nav" id="tab-trending" class="css-controller" hidden>
+  <input type="radio" name="main-nav" id="tab-community" class="css-controller" hidden>
+
+  <!-- Filter Pills Controller -->
+  <input type="radio" name="store-filter" id="filter-all" class="css-controller" checked hidden>
+  <input type="radio" name="store-filter" id="filter-bestseller" class="css-controller" hidden>
+  <input type="radio" name="store-filter" id="filter-discount" class="css-controller" hidden>
+  <input type="radio" name="store-filter" id="filter-free" class="css-controller" hidden>
+
+  <!-- Modals & Drawers Toggles -->
+  <input type="checkbox" id="cart-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="wallet-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="friends-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="chat-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="notif-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="profile-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="settings-toggle" class="css-controller" hidden>
+  <input type="checkbox" id="downloads-toggle" class="css-controller" hidden>
+
+  <!-- Promo Carousel Controller -->
+  <input type="radio" name="promo-slide" id="promo-slide-1" class="css-controller" checked hidden>
+  <input type="radio" name="promo-slide" id="promo-slide-2" class="css-controller" hidden>
+  <input type="radio" name="promo-slide" id="promo-slide-3" class="css-controller" hidden>
+
+  <!-- ================= APP CONTAINER ================= -->
+  <div class="app-container">
+
+    <!-- [SEMANTIC HTML5] <aside>: THANH ĐIỀU HƯỚNG CỘT BÊN TRÁI -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <label for="tab-store" class="brand-logo animate__animated animate__bounceIn" title="NEXUS Gaming">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M6 5H8V8H6V5ZM16 5H18V8H16V5ZM4 9H20C21.1 9 22 9.9 22 11V17C22 18.1 21.1 19 20 19H17L14 16H10L7 19H4C2.9 19 2 18.1 2 17V11C2 9.9 2.9 9 4 9ZM6 11V13H8V11H6ZM16 11V13H18V11H16ZM11 11H13V13H11V11Z"/>
+          </svg>
+        </label>
+      </div>
+
+      <!-- [SEMANTIC HTML5] <nav>: THANH ĐIỀU HƯỚNG CHÍNH -->
+      <nav class="sidebar-nav">
+        <!-- 1. Home -->
+        <label for="tab-home" class="nav-btn btn-nav-home" title="Trang chủ">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </label>
+
+        <!-- 2. Library -->
+        <label for="tab-library" class="nav-btn btn-nav-library" title="Thư viện game">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="7"/>
+            <polyline points="12 9 12 12 13.5 13.5"/>
+            <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"/>
+          </svg>
+        </label>
+
+        <!-- 3. Store (ACTIVE IN SCREENSHOT - LIME GREEN BUTTON) -->
+        <label for="tab-store" class="nav-btn btn-nav-store" title="Cửa hàng game">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+        </label>
+
+        <!-- 4. Controller / Arcade -->
+        <label for="tab-arcade" class="nav-btn btn-nav-arcade" title="Arcade & Games">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="12" x2="10" y2="12"/>
+            <line x1="8" y1="10" x2="8" y2="14"/>
+            <line x1="15" y1="13" x2="15.01" y2="13"/>
+            <line x1="18" y1="11" x2="18.01" y2="11"/>
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+          </svg>
+        </label>
+
+        <!-- 5. Trending / Flame -->
+        <label for="tab-trending" class="nav-btn btn-nav-trending" title="Xu hướng">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </label>
+
+        <!-- 6. Friends / Community -->
+        <label for="tab-community" class="nav-btn btn-nav-community" title="Cộng đồng">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </label>
+
+        <!-- 7. Shopping Cart (Toggles Drawer) -->
+        <label for="cart-toggle" class="nav-btn btn-nav-cart" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge animate__animated animate__pulse animate__infinite">3</span>
+        </label>
+      </nav>
+
+      <!-- Sidebar Bottom -->
+      <div class="sidebar-bottom">
+        <!-- Downloads -->
+        <label for="downloads-toggle" class="nav-btn" title="Tải xuống & Cài đặt">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </label>
+
+        <!-- Settings -->
+        <label for="settings-toggle" class="nav-btn" title="Cài đặt hệ thống">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </label>
+      </div>
+    </aside>
+
+    <!-- MAIN BODY -->
+    <div class="main-wrapper">
+
+      <!-- [SEMANTIC HTML5] <header>: PHẦN ĐẦU TRANG CHỨA TÌM KIẾM, VÍ TIỀN & PROFILE -->
+      <header class="topbar">
+        <!-- Search Box (Animate.css & CSS :focus) -->
+        <div class="search-container animate__animated animate__fadeInDown">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search" autocomplete="off">
+          </div>
+
+          <!-- Pure CSS Live Search Dropdown (Tất cả sản phẩm game) -->
+          <div class="search-dropdown">
+            <a href="#modal-wukong" class="search-item">
+              <img src="assets/images/wukong.jpg" alt="Black Myth Wukong">
+              <div class="search-item-info">
+                <h4>Black Myth: Wukong</h4>
+                <p>$59.99 <span class="badge-discount" style="background:#ff334b; color:#fff;">HOT</span></p>
+              </div>
+            </a>
+            <a href="#modal-eldenring" class="search-item">
+              <img src="assets/images/elden-ring.jpg" alt="Elden Ring">
+              <div class="search-item-info">
+                <h4>Elden Ring</h4>
+                <p>$59.99 <span class="badge-discount">BESTSELLER</span></p>
+              </div>
+            </a>
+            <a href="#modal-mw2" class="search-item">
+              <img src="assets/images/cod-mw2.jpg" alt="MW2">
+              <div class="search-item-info">
+                <h4>Call of Duty: Modern Warfare II</h4>
+                <p>FREE</p>
+              </div>
+            </a>
+            <a href="#modal-spiderman" class="search-item">
+              <img src="assets/images/spiderman-banner.jpg" alt="Spider-Man">
+              <div class="search-item-info">
+                <h4>Marvel's Spider-Man</h4>
+                <p>$52.99 <span class="badge-discount">-33%</span></p>
+              </div>
+            </a>
+            <a href="#modal-rdr2" class="search-item">
+              <img src="assets/images/rdr2.jpg" alt="RDR 2">
+              <div class="search-item-info">
+                <h4>Red Dead Redemption 2</h4>
+                <p>$19.79 <span class="badge-discount">67% OFF</span></p>
+              </div>
+            </a>
+            <a href="#modal-bg3" class="search-item">
+              <img src="assets/images/bg3.jpg" alt="Baldur's Gate 3">
+              <div class="search-item-info">
+                <h4>Baldur's Gate 3</h4>
+                <p>$59.99 <span class="badge-discount">GOTY</span></p>
+              </div>
+            </a>
+            <a href="#modal-cp2077" class="search-item">
+              <img src="assets/images/cyberpunk-2077.jpg" alt="Cyberpunk 2077">
+              <div class="search-item-info">
+                <h4>Cyberpunk 2077</h4>
+                <p>$59.99</p>
+              </div>
+            </a>
+            <a href="#modal-gtav" class="search-item">
+              <img src="assets/images/gta-v.jpg" alt="GTA V">
+              <div class="search-item-info">
+                <h4>Grand Theft Auto V</h4>
+                <p>$29.99 <span class="badge-discount">40% OFF</span></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Topbar Right Actions -->
+        <div class="topbar-actions animate__animated animate__fadeInRight">
+          <!-- Wallet Balance Button (Lime Green Pill) -->
+          <label for="wallet-toggle" class="wallet-btn" title="Nạp thêm số dư ví">
+            <svg class="wallet-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M21 7H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-1 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-3-11V3a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2h12z"/>
+            </svg>
+            <span class="wallet-amount">5.49 USD</span>
+          </label>
+
+          <!-- 3 Neon Lime Rounded Square Action Buttons -->
+          <div class="action-buttons-group">
+            <!-- 1. Friends Button -->
+            <label for="friends-toggle" class="neon-action-btn" title="Danh sách bạn bè">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span class="status-indicator online"></span>
+            </label>
+
+            <!-- 2. Chat Button -->
+            <label for="chat-toggle" class="neon-action-btn" title="Tin nhắn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+              </svg>
+              <span class="badge-dot"></span>
+            </label>
+
+            <!-- 3. Notifications Button -->
+            <label for="notif-toggle" class="neon-action-btn" title="Thông báo hệ thống">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+              </svg>
+              <span class="badge-dot pulse"></span>
+            </label>
+          </div>
+
+          <!-- User Profile Badge -->
+          <label for="profile-toggle" class="user-profile-btn" title="Hồ sơ cá nhân">
+            <div class="avatar-box">
+              <img src="assets/images/user-gamer-avatar.svg" alt="HƯNG Avatar" class="user-avatar" onerror="this.src='assets/images/shadow-avatar.jpg'">
+              <span class="avatar-online-dot"></span>
+              <span class="user-level-badge">LV.88</span>
+            </div>
+            <div class="user-info">
+              <span class="user-name">HƯNG</span>
+              <span class="user-tag">#1313</span>
+            </div>
+          </label>
+        </div>
+      </header>
+
+      <!-- [SEMANTIC HTML5] <main>: KHU VỰC NỘI DUNG CHÍNH CỦA WEBSITE -->
+      <main class="content-panel">
+
+        <!-- ================= VIEW: STORE (DEFAULT MATCHING SCREENSHOT) ================= -->
+        <div class="view-section view-store">
+
+          <!-- [SEMANTIC HTML5] <section>: PHÂN ĐOẠN 1 - MỤC TRENDING VỚI NHIỀU SẢN PHẨM GAME -->
+          <section class="section-container trending-section" data-aos="fade-up" data-aos-duration="700">
+            <div class="section-header">
+              <div class="header-left animate__animated animate__fadeInLeft">
+                <span class="icon-flame-circle animate__animated animate__pulse animate__infinite">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.08 3.05-8.47 6.44-11.45.56-.49 1.41-.16 1.51.58.33 2.45 1.63 4.15 3.05 4.87 2.08-2.61 2.21-4.73 2.14-5.69-.03-.43.37-.77.78-.65 3.32 1.01 6.08 4.3 6.08 8.34 0 4.97-4.03 9-9 9zm-1-6.5c1.66 0 3-1.34 3-3 0-1.12-.61-2.1-1.52-2.62-.39-.23-.88.08-.85.53.07.96-.34 1.83-1.13 2.15-.38.15-.65.51-.65.92 0 1.12.96 2.02 2.15 2.02z"/>
+                  </svg>
+                </span>
+                <h2 class="section-title">Trending & Nổi Bật</h2>
+              </div>
+              
+              <!-- THANH LỌC NHANH DANH MỤC TRỰC QUAN -->
+              <div class="filter-pills-bar">
+                <label for="filter-all" class="filter-chip chip-all">Tất cả</label>
+                <label for="filter-bestseller" class="filter-chip chip-bestseller">Bán chạy nhất</label>
+                <label for="filter-discount" class="filter-chip chip-discount">Đang giảm giá</label>
+                <label for="filter-free" class="filter-chip chip-free">Miễn phí</label>
+              </div>
+
+              <a href="#modal-mw2" class="explore-link animate__animated animate__fadeInRight">
+                <span>Explore All (16+)</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+
+            <!-- [SEMANTIC HTML5] <article>: LƯỚI GAME RỘNG LỚN (12 GAME ĐỈNH CAO) -->
+            <div class="trending-grid">
+
+              <!-- 1. Call of Duty: Modern Warfare II (FREE) -->
+              <article class="game-card item-free" data-aos="fade-up" data-aos-delay="50">
+                <a href="#modal-mw2" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/cod-mw2.jpg" alt="Call of Duty: Modern Warfare II" class="card-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/1938090/library_600x900.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Call of Duty: Modern Warfare II">Call of Duty:<br>Modern Warfare II</h3>
+                    <div class="game-price-row">
+                      <span class="price-val free">FREE</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 2. Need for Speed: Most Wanted 2005 (FREE) -->
+              <article class="game-card item-free" data-aos="fade-up" data-aos-delay="100">
+                <a href="#modal-nfs" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/nfs-mw.jpg" alt="Need for Speed: Most Wanted 2005" class="card-thumb" onerror="this.src='https://upload.wikimedia.org/wikipedia/en/8/8e/Need_for_Speed_Most_Wanted_Box_Art.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Need for Speed: Most Wanted 2005">Need for Speed:<br>Most Wanted 2005</h3>
+                    <div class="game-price-row">
+                      <span class="price-val free">FREE</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 3. Far Cry 5 ($8.99, 70% OFF) -->
+              <article class="game-card item-discount" data-aos="fade-up" data-aos-delay="150">
+                <a href="#modal-fc5" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/farcry-5.jpg" alt="Far Cry 5" class="card-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/552520/library_600x900.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Far Cry 5">Far Cry 5</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$8.99</span>
+                      <span class="badge-discount">70% OFF</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 4. EA Sports FC 24 ($69.99) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="200">
+                <a href="#modal-fc24" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/fc-24.jpg" alt="EA Sports FC 24" class="card-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/2195250/library_600x900.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="EA Sports FC 24">EA Sports FC 24</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$69.99</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 5. Cyberpunk 2077 ($59.99) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="250">
+                <a href="#modal-cp2077" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/cyberpunk-2077.jpg" alt="Cyberpunk 2077" class="card-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/1091500/library_600x900.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Cyberpunk 2077">Cyberpunk 2077</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$59.99</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 6. Grand Theft Auto V ($29.99, 40% OFF) -->
+              <article class="game-card item-discount item-bestseller" data-aos="fade-up" data-aos-delay="300">
+                <a href="#modal-gtav" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/gta-v.jpg" alt="Grand Theft Auto V" class="card-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/271590/library_600x900.jpg'">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Grand Theft Auto V">Grand Theft Auto V</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$29.99</span>
+                      <span class="badge-discount">40% OFF</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 7. Black Myth: Wukong (NEW ADDED) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="350">
+                <a href="#modal-wukong" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/wukong.jpg" alt="Black Myth: Wukong" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Black Myth: Wukong">Black Myth:<br>Wukong</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$59.99</span>
+                      <span class="badge-discount" style="background:#ff334b; color:#fff;">HOT</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 8. Elden Ring (NEW ADDED) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="400">
+                <a href="#modal-eldenring" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/elden-ring.jpg" alt="Elden Ring" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Elden Ring">Elden Ring</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$59.99</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 9. Red Dead Redemption 2 (NEW ADDED) -->
+              <article class="game-card item-discount item-bestseller" data-aos="fade-up" data-aos-delay="450">
+                <a href="#modal-rdr2" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/rdr2.jpg" alt="Red Dead Redemption 2" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Red Dead Redemption 2">Red Dead<br>Redemption 2</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$19.79</span>
+                      <span class="badge-discount">67% OFF</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 10. Baldur's Gate 3 (NEW ADDED) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="500">
+                <a href="#modal-bg3" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/bg3.jpg" alt="Baldur's Gate 3" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Baldur's Gate 3">Baldur's Gate 3</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$59.99</span>
+                      <span class="badge-discount" style="background:#f59e0b; color:#12131c;">GOTY</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 11. Ghost of Tsushima (NEW ADDED) -->
+              <article class="game-card item-bestseller" data-aos="fade-up" data-aos-delay="550">
+                <a href="#modal-tsushima" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/tsushima.jpg" alt="Ghost of Tsushima" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Ghost of Tsushima">Ghost of Tsushima:<br>DIRECTOR'S CUT</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$59.99</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              <!-- 12. Forza Horizon 5 (NEW ADDED) -->
+              <article class="game-card item-discount" data-aos="fade-up" data-aos-delay="600">
+                <a href="#modal-forza5" class="game-card-link">
+                  <div class="card-thumb-wrap">
+                    <img src="assets/images/forza5.jpg" alt="Forza Horizon 5" class="card-thumb">
+                    <div class="card-overlay">
+                      <span class="quick-btn">Xem chi tiết</span>
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <h3 class="game-title" title="Forza Horizon 5">Forza Horizon 5</h3>
+                    <div class="game-price-row">
+                      <span class="price-val">$29.99</span>
+                      <span class="badge-discount">50% OFF</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- BOTTOM ROW: SPLIT INTO TWO COLUMNS -->
+          <div class="bottom-split-row">
+
+            <!-- [SEMANTIC HTML5] <section>: PHÂN ĐOẠN 2 - BROWSE BY CATEGORIES -->
+            <section class="section-container categories-column" data-aos="fade-right" data-aos-duration="800">
+              <div class="section-header">
+                <div class="header-left animate__animated animate__fadeIn">
+                  <span class="icon-grid-rect">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                      <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                      <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                      <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                    </svg>
+                  </span>
+                  <h2 class="section-title">Browse By Categories</h2>
+                </div>
+                <a href="#category-all" class="explore-link">
+                  <span>Explore All</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+
+              <!-- 2x3 CATEGORY CARDS GRID (<article> TAGS) -->
+              <div class="categories-grid">
+                <!-- 1. Action & Adventure -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="100">
+                  <a href="#modal-wukong" class="category-card-link" title="Hành động & Phiêu lưu">
+                    <img src="assets/images/cat-action.jpg" alt="Action & Adventure" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">Action & Adventure</span>
+                  </a>
+                </article>
+
+                <!-- 2. Racing -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="150">
+                  <a href="#modal-forza5" class="category-card-link" title="Đua xe">
+                    <img src="assets/images/cat-racing.jpg" alt="Racing" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">Racing</span>
+                  </a>
+                </article>
+
+                <!-- 3. Sports -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="200">
+                  <a href="#modal-fc24" class="category-card-link" title="Thể thao">
+                    <img src="assets/images/cat-sports.jpg" alt="Sports" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">Sports</span>
+                  </a>
+                </article>
+
+                <!-- 4. RPG -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="250">
+                  <a href="#modal-eldenring" class="category-card-link" title="Nhập vai RPG">
+                    <img src="assets/images/cat-rpg.jpg" alt="RPG" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">RPG</span>
+                  </a>
+                </article>
+
+                <!-- 5. Strategy -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="300">
+                  <a href="#modal-bg3" class="category-card-link" title="Chiến thuật">
+                    <img src="assets/images/cat-strategy.jpg" alt="Strategy" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">Strategy</span>
+                  </a>
+                </article>
+
+                <!-- 6. Shooting -->
+                <article class="category-card" data-aos="zoom-in" data-aos-delay="350">
+                  <a href="#modal-mw2" class="category-card-link" title="Bắn súng FPS">
+                    <img src="assets/images/cat-shooting.jpg" alt="Shooting" class="cat-bg" onerror="this.src='https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=500&q=80'">
+                    <div class="cat-gradient-scrim"></div>
+                    <span class="cat-label">Shooting</span>
+                  </a>
+                </article>
+              </div>
+            </section>
+
+            <!-- COLUMN RIGHT: PROMO BANNER + MY GAMES -->
+            <div class="right-column-stack">
+
+              <!-- HERO / FEATURED PROMO BANNER (WEEKEND DEAL) -->
+              <div class="promo-banner-container" data-aos="fade-left" data-aos-duration="800">
+
+                <!-- SLIDE 1: SPIDER-MAN -->
+                <div class="promo-slide promo-slide-spiderman">
+                  <article class="promo-banner-card">
+                    <a href="#modal-spiderman" class="promo-card-link">
+                      <div class="promo-ribbon animate__animated animate__pulse animate__infinite">WEEKEND DEAL</div>
+                      <div class="promo-content">
+                        <h3 class="promo-title animate__animated animate__fadeInDown">Marvel's Spider-Man</h3>
+                        <div class="promo-pricing animate__animated animate__fadeInUp">
+                          <span class="promo-price">$52.99</span>
+                          <span class="promo-discount-badge">-33% OFF</span>
+                        </div>
+                      </div>
+                      <div class="promo-art-wrap">
+                        <img src="assets/images/spiderman-banner.jpg" alt="Spider-Man" class="promo-art-img" onerror="this.src='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/capsule_616x353.jpg'">
+                        <div class="promo-fade-mask"></div>
+                      </div>
+                    </a>
+                  </article>
+                  <!-- Slider Navigation for Slide 1 -->
+                  <div class="promo-controls">
+                    <label for="promo-slide-3" class="promo-nav-btn" title="Ưu đãi trước">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </label>
+                    <label for="promo-slide-2" class="promo-nav-btn" title="Ưu đãi tiếp theo">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- SLIDE 2: ELDEN RING -->
+                <div class="promo-slide promo-slide-eldenring">
+                  <article class="promo-banner-card elden-theme">
+                    <a href="#modal-eldenring" class="promo-card-link">
+                      <div class="promo-ribbon animate__animated animate__pulse animate__infinite">WEEKEND DEAL</div>
+                      <div class="promo-content">
+                        <h3 class="promo-title">Elden Ring: Erdtree</h3>
+                        <div class="promo-pricing">
+                          <span class="promo-price">$39.99</span>
+                          <span class="promo-discount-badge">-20% OFF</span>
+                        </div>
+                      </div>
+                      <div class="promo-art-wrap">
+                        <img src="assets/images/eldenring-banner.jpg" alt="Elden Ring" class="promo-art-img">
+                        <div class="promo-fade-mask"></div>
+                      </div>
+                    </a>
+                  </article>
+                  <!-- Slider Navigation for Slide 2 -->
+                  <div class="promo-controls">
+                    <label for="promo-slide-1" class="promo-nav-btn" title="Ưu đãi trước">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </label>
+                    <label for="promo-slide-3" class="promo-nav-btn" title="Ưu đãi tiếp theo">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- SLIDE 3: GOD OF WAR -->
+                <div class="promo-slide promo-slide-gow">
+                  <article class="promo-banner-card gow-theme">
+                    <a href="#modal-gow" class="promo-card-link">
+                      <div class="promo-ribbon animate__animated animate__pulse animate__infinite">WEEKEND DEAL</div>
+                      <div class="promo-content">
+                        <h3 class="promo-title">God of War Ragnarök</h3>
+                        <div class="promo-pricing">
+                          <span class="promo-price">$49.99</span>
+                          <span class="promo-discount-badge">-40% OFF</span>
+                        </div>
+                      </div>
+                      <div class="promo-art-wrap">
+                        <img src="assets/images/gow-banner.jpg" alt="God of War" class="promo-art-img">
+                        <div class="promo-fade-mask"></div>
+                      </div>
+                    </a>
+                  </article>
+                  <!-- Slider Navigation for Slide 3 -->
+                  <div class="promo-controls">
+                    <label for="promo-slide-2" class="promo-nav-btn" title="Ưu đãi trước">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </label>
+                    <label for="promo-slide-1" class="promo-nav-btn" title="Ưu đãi tiếp theo">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- [SEMANTIC HTML5] <section>: PHÂN ĐOẠN 3 - MY GAMES -->
+              <section class="section-container my-games-section" data-aos="fade-up" data-aos-duration="800">
+                <div class="section-header">
+                  <div class="header-left">
+                    <span class="icon-gamepad-symbol">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12"/>
+                        <line x1="8" y1="10" x2="8" y2="14"/>
+                        <line x1="15" y1="13" x2="15.01" y2="13"/>
+                        <line x1="18" y1="11" x2="18.01" y2="11"/>
+                        <rect x="2" y="6" width="20" height="12" rx="3"/>
+                      </svg>
+                    </span>
+                    <h2 class="section-title">My Games</h2>
+                  </div>
+                  <label for="tab-library" class="explore-link">
+                    <span>Explore All</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </label>
+                </div>
+
+                <!-- 2x2 MY GAMES GRID (<article> TAGS) -->
+                <div class="my-games-grid">
+                  <!-- 1. Counter Strike 2 -->
+                  <article class="my-game-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#launch-cs2" class="my-game-link">
+                      <img src="assets/images/cs2.jpg" alt="Counter Strike 2" class="my-game-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg'">
+                      <div class="my-game-details">
+                        <h4 class="my-game-title">Counter Strike 2</h4>
+                        <p class="my-game-time">Time Played: 972.7 hrs</p>
+                      </div>
+                      <span class="play-action-btn" title="Khởi chạy">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </span>
+                    </a>
+                  </article>
+
+                  <!-- 2. Valorant -->
+                  <article class="my-game-item" data-aos="fade-up" data-aos-delay="150">
+                    <a href="#launch-valorant" class="my-game-link">
+                      <img src="assets/images/valorant.jpg" alt="Valorant" class="my-game-thumb" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=200&q=80'">
+                      <div class="my-game-details">
+                        <h4 class="my-game-title">Valorant</h4>
+                        <p class="my-game-time">Time Played: 502.7 hrs</p>
+                      </div>
+                      <span class="play-action-btn" title="Khởi chạy">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </span>
+                    </a>
+                  </article>
+
+                  <!-- 3. Paladins -->
+                  <article class="my-game-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#launch-paladins" class="my-game-link">
+                      <img src="assets/images/paladins.jpg" alt="Paladins" class="my-game-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/444090/header.jpg'">
+                      <div class="my-game-details">
+                        <h4 class="my-game-title">Paladins</h4>
+                        <p class="my-game-time">Time Played: 601.4 hrs</p>
+                      </div>
+                      <span class="play-action-btn" title="Khởi chạy">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </span>
+                    </a>
+                  </article>
+
+                  <!-- 4. Team Fortress 2 -->
+                  <article class="my-game-item" data-aos="fade-up" data-aos-delay="250">
+                    <a href="#launch-tf2" class="my-game-link">
+                      <img src="assets/images/tf2.jpg" alt="Team Fortress 2" class="my-game-thumb" onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/440/header.jpg'">
+                      <div class="my-game-details">
+                        <h4 class="my-game-title">Team Fortress 2</h4>
+                        <p class="my-game-time">Time Played: 477.3 hrs</p>
+                      </div>
+                      <span class="play-action-btn" title="Khởi chạy">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      </span>
+                    </a>
+                  </article>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+          <!-- [SEMANTIC HTML5] <footer>: CHÂN TRANG ĐẦY ĐỦ THÔNG TIN LIÊN HỆ & BẢN QUYỀN -->
+          <footer class="app-footer" data-aos="fade-up">
+            <div class="footer-top-row">
+              <div class="footer-brand">
+                <span class="footer-logo">NEXUS // GAMING</span>
+                <p class="footer-desc">Nền tảng phân phối và trung tâm quản lý trò chơi bản quyền thế hệ mới.</p>
+              </div>
+              <div class="footer-links-group">
+                <div class="footer-col">
+                  <h5>Hỗ Trợ & Liên Hệ</h5>
+                  <p>Email: <a href="mailto:support@nexusgamehub.com">support@nexusgamehub.com</a></p>
+                  <p>Hotline: 1900 6868 (24/7)</p>
+                </div>
+                <div class="footer-col">
+                  <h5>Pháp Lý & Điều Khoản</h5>
+                  <a href="#">Điều khoản sử dụng</a>
+                  <a href="#">Chính sách quyền riêng tư</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom-row">
+              <p class="copyright-text">© 2026 NEXUS Gaming Hub Inc. Tất cả quyền được bảo lưu.</p>
+              <div class="footer-status-pill">
+                <span class="status-dot-mini online"></span>
+                <span>Máy chủ hoạt động ổn định (100% Uptime)</span>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+
+        <!-- ================= VIEW: LIBRARY (PURE CSS TAB) ================= -->
+        <div class="view-section view-library">
+          <div class="subview-header">
+            <h2>Thư Viện Trò Chơi Của Bạn</h2>
+            <p>Tất cả trò chơi đã cài đặt và sẵn sàng khởi chạy ngay.</p>
+          </div>
+          <div class="library-full-grid">
+            <article class="lib-card">
+              <img src="assets/images/cs2.jpg" alt="CS2">
+              <div class="lib-card-info">
+                <h4>Counter Strike 2</h4>
+                <p>Đã chơi: 972.7 giờ</p>
+                <a href="#launch-cs2" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+            <article class="lib-card">
+              <img src="assets/images/valorant.jpg" alt="Valorant">
+              <div class="lib-card-info">
+                <h4>Valorant</h4>
+                <p>Đã chơi: 502.7 giờ</p>
+                <a href="#launch-valorant" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+            <article class="lib-card">
+              <img src="assets/images/paladins.jpg" alt="Paladins">
+              <div class="lib-card-info">
+                <h4>Paladins</h4>
+                <p>Đã chơi: 601.4 giờ</p>
+                <a href="#launch-paladins" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+            <article class="lib-card">
+              <img src="assets/images/tf2.jpg" alt="TF2">
+              <div class="lib-card-info">
+                <h4>Team Fortress 2</h4>
+                <p>Đã chơi: 477.3 giờ</p>
+                <a href="#launch-tf2" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+            <article class="lib-card">
+              <img src="assets/images/wukong.jpg" alt="Black Myth Wukong">
+              <div class="lib-card-info">
+                <h4>Black Myth: Wukong</h4>
+                <p>Đã chơi: 48.5 giờ</p>
+                <a href="#launch-wukong" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+            <article class="lib-card">
+              <img src="assets/images/elden-ring.jpg" alt="Elden Ring">
+              <div class="lib-card-info">
+                <h4>Elden Ring</h4>
+                <p>Đã chơi: 182.0 giờ</p>
+                <a href="#launch-eldenring" class="primary-btn">CHƠI NGAY</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ================= VIEW: ARCADE (PURE CSS TAB) ================= -->
+        <div class="view-section view-arcade">
+          <div class="subview-header">
+            <h2>NEXUS Mini Arcade</h2>
+            <p>Thử thách kỹ năng phản xạ của game thủ chuyên nghiệp.</p>
+          </div>
+          <div class="arcade-card-box">
+            <div class="mini-game-stage">
+              <h3>⚡ Cyber Speed Reflex ⚡</h3>
+              <p>Rê chuột vào ô bên dưới để kích hoạt phản xạ Neon!</p>
+              <div class="reaction-box-purecss">
+                <span class="idle-text">DI CHUỘT VÀO ĐÂY</span>
+                <span class="hover-text">PHẢN XẠ SIÊU TỐC: 185ms! 🔥</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= VIEW: COMMUNITY (PURE CSS TAB) ================= -->
+        <div class="view-section view-community">
+          <div class="subview-header">
+            <h2>Cộng Đồng Game Thủ NEXUS</h2>
+            <p>Khoảnh khắc nổi bật và bảng xếp hạng trong tuần.</p>
+          </div>
+          <div class="community-feed-grid">
+            <article class="feed-item">
+              <img src="assets/images/spiderman-banner.jpg" alt="Spider-Man Highlight">
+              <div class="feed-text">
+                <h4>Khoảnh khắc đu tơ mãn nhãn tại Manhattan</h4>
+                <p>Đăng bởi: <strong>HƯNG #1313</strong> • 12.4k lượt thích</p>
+              </div>
+            </article>
+            <article class="feed-item">
+              <img src="assets/images/cyberpunk-2077.jpg" alt="Cyberpunk Night City">
+              <div class="feed-text">
+                <h4>Night City với Ray Tracing Overdrive</h4>
+                <p>Đăng bởi: <strong>Ghost_TF141</strong> • 8.9k lượt thích</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== PURE CSS INTERACTIVE MODALS & DRAWERS ==================== -->
+
+  <!-- 1. CART DRAWER (TOGGLED VIA #cart-toggle) -->
+  <div class="drawer-backdrop drawer-cart">
+    <label for="cart-toggle" class="drawer-overlay-close"></label>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="d-title-wrap">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <h3>Giỏ Hàng (3)</h3>
+        </div>
+        <label for="cart-toggle" class="drawer-close">&times;</label>
+      </div>
+
+      <div class="cart-items-list">
+        <div class="cart-item-row">
+          <img src="assets/images/wukong.jpg" alt="Black Myth Wukong" class="cart-item-thumb">
+          <div class="cart-item-info">
+            <h4 class="cart-item-title">Black Myth: Wukong</h4>
+            <p class="cart-item-price">$59.99 <span class="badge-discount" style="background:#ff334b; color:#fff;">HOT</span></p>
+          </div>
+          <button class="cart-item-remove" title="Xóa">&times;</button>
+        </div>
+        <div class="cart-item-row">
+          <img src="assets/images/rdr2.jpg" alt="Red Dead Redemption 2" class="cart-item-thumb">
+          <div class="cart-item-info">
+            <h4 class="cart-item-title">Red Dead Redemption 2</h4>
+            <p class="cart-item-price">$19.79 <span class="badge-discount">67% OFF</span></p>
+          </div>
+          <button class="cart-item-remove" title="Xóa">&times;</button>
+        </div>
+        <div class="cart-item-row">
+          <img src="assets/images/farcry-5.jpg" alt="Far Cry 5" class="cart-item-thumb">
+          <div class="cart-item-info">
+            <h4 class="cart-item-title">Far Cry 5</h4>
+            <p class="cart-item-price">$8.99 <span class="badge-discount">70% OFF</span></p>
+          </div>
+          <button class="cart-item-remove" title="Xóa">&times;</button>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-summary-line">
+          <span>Tạm tính (3 trò chơi):</span>
+          <span>$88.77</span>
+        </div>
+        <div class="cart-summary-line highlight">
+          <span>Số dư ví hiện tại:</span>
+          <span class="neon-text">$5.49 USD</span>
+        </div>
+        <label for="wallet-toggle" class="checkout-btn" style="text-align: center; text-decoration: none;">Nạp Thêm Tiền & Thanh Toán</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. WALLET TOP-UP MODAL (TOGGLED VIA #wallet-toggle) -->
+  <div class="modal-backdrop modal-wallet">
+    <label for="wallet-toggle" class="modal-overlay-close"></label>
+    <div class="wallet-dialog">
+      <label for="wallet-toggle" class="modal-close-btn">&times;</label>
+      <div class="wallet-dialog-header">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#b6f800"><path d="M21 7H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-1 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-3-11V3a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2h12z"/></svg>
+        <h3>Nạp Tiền Vào Ví NEXUS</h3>
+      </div>
+      <p class="wallet-subtitle">Số dư hiện tại: <strong class="neon-text">$5.49 USD</strong></p>
+
+      <div class="topup-options-grid">
+        <button class="topup-chip">+$5.00</button>
+        <button class="topup-chip active">+$10.00</button>
+        <button class="topup-chip">+$25.00</button>
+        <button class="topup-chip">+$50.00</button>
+        <button class="topup-chip">+$100.00</button>
+      </div>
+
+      <div class="wallet-custom-input">
+        <label>Nhập số tiền khác ($ USD):</label>
+        <input type="number" value="15.00" placeholder="15.00">
+      </div>
+
+      <label for="wallet-toggle" class="btn-topup-confirm" style="text-align:center;">Xác Nhận Nạp Tiền</label>
+    </div>
+  </div>
+
+  <!-- 3. FRIENDS DRAWER (TOGGLED VIA #friends-toggle) -->
+  <div class="drawer-backdrop drawer-friends">
+    <label for="friends-toggle" class="drawer-overlay-close"></label>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3>Bạn Bè Trực Tuyến</h3>
+        <label for="friends-toggle" class="drawer-close">&times;</label>
+      </div>
+      <div class="friends-list">
+        <label for="chat-toggle" class="friend-item">
+          <div class="friend-avatar-wrap">
+            <img src="assets/images/gamer-avatar-2.jpg" class="friend-avatar" alt="Ghost" onerror="this.src='https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=100&q=80'">
+            <span class="status-dot-mini in-game"></span>
+          </div>
+          <div class="friend-details">
+            <h4 class="friend-name">Ghost [TF141]</h4>
+            <p class="friend-activity">Black Myth: Wukong (Đang chơi)</p>
+          </div>
+        </label>
+        <label for="chat-toggle" class="friend-item">
+          <div class="friend-avatar-wrap">
+            <img src="assets/images/cyber-avatar.jpg" class="friend-avatar" alt="Soap" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80'">
+            <span class="status-dot-mini online"></span>
+          </div>
+          <div class="friend-details">
+            <h4 class="friend-name">Soap_MacTavish</h4>
+            <p class="friend-activity">Trực tuyến</p>
+          </div>
+        </label>
+        <label for="chat-toggle" class="friend-item">
+          <div class="friend-avatar-wrap">
+            <img src="assets/images/shadow-avatar.jpg" class="friend-avatar" alt="Viper" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=100&q=80'">
+            <span class="status-dot-mini in-game"></span>
+          </div>
+          <div class="friend-details">
+            <h4 class="friend-name">Viper_Neon</h4>
+            <p class="friend-activity">Valorant (Competitive)</p>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CHAT POPUP (TOGGLED VIA #chat-toggle) -->
+  <div class="chat-popup">
+    <div class="chat-header">
+      <div class="chat-user-preview">
+        <img src="assets/images/gamer-avatar-2.jpg" alt="Ghost" style="width:26px; height:26px; border-radius:8px; object-fit:cover; border:1.5px solid var(--neon-lime);">
+        <span class="status-dot-mini online" style="position:static; display:inline-block; margin-left:2px;"></span>
+        <span>Ghost [TF141]</span>
+      </div>
+      <label for="chat-toggle" class="chat-close">&times;</label>
+    </div>
+    <div class="chat-messages">
+      <div class="msg-bubble received">Ê Hưng, ông mua Black Myth Wukong chưa? Bắn boss cuốn dã man!</div>
+      <div class="msg-bubble sent">Tui đang tải nè, nhìn đồ họa Unreal Engine 5 đỉnh thật sự! 🔥</div>
+      <div class="msg-bubble received">Ok ông ơi, tối nay lên stream chia sẻ cách build đồ nhé!</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" placeholder="Nhập tin nhắn...">
+      <button class="chat-send-btn">Gửi</button>
+    </div>
+  </div>
+
+  <!-- 5. NOTIFICATIONS DROPDOWN (TOGGLED VIA #notif-toggle) -->
+  <div class="notif-dropdown">
+    <div class="notif-header">
+      <h4>Thông Báo Hệ Thống</h4>
+      <label for="notif-toggle" class="btn-clear-notif">Đóng</label>
+    </div>
+    <div class="notif-list">
+      <div class="notif-item unread">
+        <div class="notif-icon">🔥</div>
+        <div class="notif-text">
+          <p><strong>Siêu Phẩm Mới:</strong> Black Myth: Wukong đã chính thức mở bán!</p>
+          <span class="notif-time">2 phút trước</span>
+        </div>
+      </div>
+      <div class="notif-item unread">
+        <div class="notif-icon">🏷️</div>
+        <div class="notif-text">
+          <p><strong>Red Dead Redemption 2</strong> đang giảm sốc 67% chỉ còn $19.79!</p>
+          <span class="notif-time">15 phút trước</span>
+        </div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon">🎮</div>
+        <div class="notif-text">
+          <p><strong>Far Cry 5</strong> trong danh sách yêu thích giảm 70%!</p>
+          <span class="notif-time">1 giờ trước</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. USER PROFILE DROPDOWN (TOGGLED VIA #profile-toggle) -->
+  <div class="profile-dropdown">
+    <div class="profile-header-card">
+      <div class="profile-avatar-wrap">
+        <img src="assets/images/user-gamer-avatar.svg" alt="HƯNG" class="profile-card-avatar" onerror="this.src='assets/images/shadow-avatar.jpg'">
+        <span class="profile-badge-pill">LV.88 VIP</span>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-size:14.5px; font-weight:800; display:flex; align-items:center; gap:6px;">HƯNG <span style="color:var(--neon-lime); font-size:11px;">#1313</span></h4>
+        <span style="color:#22c55e; font-size:12px; font-weight:700;">● Trực Tuyến &bull; Pro Gamer</span>
+      </div>
+    </div>
+    <div class="profile-menu-links">
+      <a href="#tab-library" class="p-link">🎮 Kho Game Của Tôi</a>
+      <label for="wallet-toggle" class="p-link">💳 Số Dư Ví ($5.49 USD)</label>
+      <label for="settings-toggle" class="p-link">⚙️ Cài Đặt Tài Khoản</label>
+      <a href="#" class="p-link logout">Đăng Xuất</a>
+    </div>
+  </div>
+
+  <!-- 7. SETTINGS MODAL (TOGGLED VIA #settings-toggle) -->
+  <div class="modal-backdrop modal-settings">
+    <label for="settings-toggle" class="modal-overlay-close"></label>
+    <div class="wallet-dialog">
+      <label for="settings-toggle" class="modal-close-btn">&times;</label>
+      <h3 style="color:#fff; font-size:18px; margin-bottom:12px;">⚙️ Cài Đặt Hệ Thống NEXUS</h3>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; color:#c4c8de;">
+        <label><input type="checkbox" checked> Bật tăng tốc phần cứng GPU</label>
+        <label><input type="checkbox" checked> Tự động cập nhật trò chơi ngầm</label>
+        <label><input type="checkbox" checked> Thông báo tin nhắn bạn bè</label>
+        <label><input type="checkbox" checked> Âm thanh vòm Dolby Surround 7.1</label>
+      </div>
+      <label for="settings-toggle" class="btn-topup-confirm" style="text-align:center; margin-top:16px;">Lưu Cài Đặt</label>
+    </div>
+  </div>
+
+  <!-- 8. DOWNLOADS MODAL (TOGGLED VIA #downloads-toggle) -->
+  <div class="modal-backdrop modal-downloads">
+    <label for="downloads-toggle" class="modal-overlay-close"></label>
+    <div class="wallet-dialog">
+      <label for="downloads-toggle" class="modal-close-btn">&times;</label>
+      <h3 style="color:#fff; font-size:18px; margin-bottom:12px;">📥 Tiến Trình Tải Xuống</h3>
+      <div style="background:#131420; padding:12px; border-radius:10px;">
+        <h4 style="color:#fff; font-size:13px;">Black Myth: Wukong - Tải gói dữ liệu HD</h4>
+        <p style="color:var(--neon-lime); font-size:12px; margin:4px 0;">100% Hoàn thành (128.4 GB / 128.4 GB)</p>
+        <div style="background:#222538; height:6px; border-radius:99px; overflow:hidden;">
+          <div style="background:var(--neon-lime); width:100%; height:100%;"></div>
+        </div>
+      </div>
+      <label for="downloads-toggle" class="btn-topup-confirm" style="text-align:center; margin-top:16px;">Đóng</label>
+    </div>
+  </div>
+
+  <!-- ==================== PURE CSS GAME DETAIL MODALS (:target) ==================== -->
+
+  <!-- MODAL: BLACK MYTH WUKONG -->
+  <div id="modal-wukong" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/wukong.jpg" alt="Black Myth Wukong" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Action RPG</span>
+          <h2 class="dialog-title">Black Myth: Wukong</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Cực Kỳ Tích Cực (96% từ hơn 700.000 đánh giá)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Black Myth: Wukong là một game nhập vai hành động bắt nguồn từ thần thoại Trung Hoa. Bạn sẽ vào vai Người Được Chọn để khám phá sự thật đằng sau bức màn huyền thoại Tây Du Ký huy hoàng.</p>
+          <div class="dialog-tags-wrap">
+            <span class="dialog-tag">#Action</span>
+            <span class="dialog-tag">#RPG</span>
+            <span class="dialog-tag">#SoulsLike</span>
+            <span class="dialog-tag">#Mythology</span>
+          </div>
+          <div class="system-specs-box">
+            <h4>Cấu hình tối thiểu</h4>
+            <ul>
+              <li><strong>Hệ điều hành:</strong> Windows 10/11 64-bit</li>
+              <li><strong>CPU:</strong> Core i5-8400 / Ryzen 5 1600</li>
+              <li><strong>RAM:</strong> 16 GB RAM</li>
+              <li><strong>Card đồ họa:</strong> GTX 1060 (6GB) / RX 580</li>
+              <li><strong>Ổ cứng:</strong> 130 GB dung lượng khả dụng (khuyên dùng SSD)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+              <a href="#launch-wukong" class="primary-btn" style="text-align:center; text-decoration:none;">Chơi Thử Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ELDEN RING -->
+  <div id="modal-eldenring" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/elden-ring.jpg" alt="Elden Ring" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Souls-like RPG</span>
+          <h2 class="dialog-title">Elden Ring</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Game Của Năm (97%)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Kiệt tác thế giới mở của FromSoftware và George R.R. Martin. Trỗi dậy, hỡi Kẻ Biến Chất, và tiến vào Vùng đất Trung Gian để trở thành Tân Chúa Tể Elden.</p>
+          <div class="dialog-tags-wrap">
+            <span class="dialog-tag">#SoulsLike</span>
+            <span class="dialog-tag">#OpenWorld</span>
+            <span class="dialog-tag">#DarkFantasy</span>
+          </div>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RED DEAD REDEMPTION 2 -->
+  <div id="modal-rdr2" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/rdr2.jpg" alt="Red Dead Redemption 2" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Open World</span>
+          <h2 class="dialog-title">Red Dead Redemption 2</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Tuyệt Tác (97%)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Nước Mỹ năm 1899. Arthur Morgan và băng đảng Van der Linde buộc phải lẩn trốn trước sự truy quét của các đặc vụ liên bang và những tay săn tiền thưởng cừ khôi nhất.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá ưu đãi:</span>
+              <span class="p-value">$19.79</span>
+            </div>
+            <div class="p-discount-row">
+              <span class="badge-discount">67% OFF</span>
+              <span style="text-decoration:line-through; color:#777;">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BALDUR'S GATE 3 -->
+  <div id="modal-bg3" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/bg3.jpg" alt="Baldur's Gate 3" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Strategy RPG</span>
+          <h2 class="dialog-title">Baldur's Gate 3</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Tập hợp nhóm của bạn và quay trở lại Forgotten Realms trong câu chuyện về tình bạn, sự phản bội, sự hy sinh và sức hút của quyền lực tối thượng.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GHOST OF TSUSHIMA -->
+  <div id="modal-tsushima" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/tsushima.jpg" alt="Ghost of Tsushima" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Action Adventure</span>
+          <h2 class="dialog-title">Ghost of Tsushima</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Cuối thế kỷ 13, đế chế Mông Cổ tàn phá toàn bộ các quốc gia. Hãy vào vai Jin Sakai, một samurai phải vượt qua truyền thống để cứu lấy người dân đảo Tsushima.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: FORZA HORIZON 5 -->
+  <div id="modal-forza5" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/forza5.jpg" alt="Forza Horizon 5" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Open World Racing</span>
+          <h2 class="dialog-title">Forza Horizon 5</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Khám phá phong cảnh Mexico rộng lớn luôn biến đổi cùng trải nghiệm lái xe không giới hạn trên hàng trăm siêu xe hàng đầu thế giới.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá ưu đãi:</span>
+              <span class="p-value">$29.99</span>
+            </div>
+            <div class="p-discount-row">
+              <span class="badge-discount">50% OFF</span>
+              <span style="text-decoration:line-through; color:#777;">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MW2 -->
+  <div id="modal-mw2" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/cod-mw2.jpg" alt="MW2" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">FPS Shooter</span>
+          <h2 class="dialog-title">Call of Duty: Modern Warfare II</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Rất Tích Cực (89% từ 142.000 đánh giá)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Call of Duty: Modern Warfare II đưa người chơi vào một cuộc xung đột toàn cầu chưa từng có, với sự trở lại của các thành viên Task Force 141 mang tính biểu tượng gồm Đại úy Price, Ghost, Soap và Gaz.</p>
+          <div class="dialog-tags-wrap">
+            <span class="dialog-tag">#FPS</span>
+            <span class="dialog-tag">#Multiplayer</span>
+            <span class="dialog-tag">#Warzone</span>
+            <span class="dialog-tag">#Tactical</span>
+          </div>
+          <div class="system-specs-box">
+            <h4>Cấu hình tối thiểu</h4>
+            <ul>
+              <li><strong>Hệ điều hành:</strong> Windows 10/11 64-bit</li>
+              <li><strong>CPU:</strong> Intel Core i5-6600K / AMD Ryzen 5 1600</li>
+              <li><strong>RAM:</strong> 12 GB RAM</li>
+              <li><strong>Card đồ họa:</strong> NVIDIA GeForce GTX 1060 / AMD RX 580</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value" style="color:#fff;">MIỄN PHÍ</span>
+            </div>
+            <div class="purchase-actions">
+              <a href="#launch-mw2" class="btn-buy-now" style="text-align:center; text-decoration:none;">Chơi Miễn Phí Ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: NFS -->
+  <div id="modal-nfs" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/nfs-mw.jpg" alt="NFS Most Wanted" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Racing</span>
+          <h2 class="dialog-title">Need for Speed: Most Wanted 2005</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Huyền Thoại (98% tuyệt đối)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Tác phẩm đỉnh cao dòng game đua xe đường phố kinh điển. Hãy đánh bại danh sách đen Blacklist 15 và trốn chạy khỏi lực lượng cảnh sát Rockport cùng chiếc BMW M3 GTR huyền thoại.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">MIỄN PHÍ</span>
+            </div>
+            <div class="purchase-actions">
+              <a href="#launch-nfs" class="btn-buy-now" style="text-align:center; text-decoration:none;">Chơi Ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: FAR CRY 5 -->
+  <div id="modal-fc5" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/farcry-5.jpg" alt="Far Cry 5" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Action & Adventure</span>
+          <h2 class="dialog-title">Far Cry 5</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Rất Tích Cực (85%)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Chào mừng đến với Hạt Hope, Montana, nơi trú ngụ của giáo phái ngày tận thế Eden's Gate. Đứng lên giải phóng cộng đồng trong một thế giới mở hoang dã và tự do.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá ưu đãi:</span>
+              <span class="p-value">$8.99</span>
+            </div>
+            <div class="p-discount-row">
+              <span class="badge-discount">70% OFF</span>
+              <span style="text-decoration:line-through; color:#777;">$29.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SPIDER-MAN -->
+  <div id="modal-spiderman" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/spiderman-banner.jpg" alt="Spider-Man" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Superhero Action</span>
+          <h2 class="dialog-title">Marvel's Spider-Man</h2>
+          <div class="dialog-rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-text">Cực Kỳ Tích Cực (96%)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Thế giới của Peter Parker và Spider-Man va chạm trong cuộc phiêu lưu kịch tính khắp New York chân thực và sống động hơn bao giờ hết.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá ưu đãi:</span>
+              <span class="p-value">$52.99</span>
+            </div>
+            <div class="p-discount-row">
+              <span class="badge-discount">-33% OFF</span>
+              <span style="text-decoration:line-through; color:#777;">$79.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CYBERPUNK 2077 -->
+  <div id="modal-cp2077" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/cyberpunk-2077.jpg" alt="Cyberpunk" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">RPG</span>
+          <h2 class="dialog-title">Cyberpunk 2077</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Trò chơi nhập vai hành động phiêu lưu thế giới mở lấy bối cảnh tại Night City, đại đô thị tương lai ám ảnh bởi quyền lực và sự nâng cấp cơ thể.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$59.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GTA V -->
+  <div id="modal-gtav" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/gta-v.jpg" alt="GTA V" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Open World</span>
+          <h2 class="dialog-title">Grand Theft Auto V</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Khám phá thế giới rộng lớn tuyệt đẹp của Los Santos và Quận Blaine trong trải nghiệm Grand Theft Auto V đỉnh cao.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá ưu đãi:</span>
+              <span class="p-value">$29.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: FC 24 -->
+  <div id="modal-fc24" class="modal-wrapper">
+    <a href="#" class="modal-backdrop-link"></a>
+    <div class="game-detail-dialog animate__animated animate__zoomIn">
+      <a href="#" class="modal-close-btn">&times;</a>
+      <div class="dialog-banner-wrap">
+        <img src="assets/images/fc-24.jpg" alt="FC 24" class="dialog-banner">
+        <div class="dialog-banner-gradient"></div>
+        <div class="dialog-header-meta">
+          <span class="badge-tag">Sports</span>
+          <h2 class="dialog-title">EA Sports FC 24</h2>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <div class="dialog-col-main">
+          <h3>Mô tả trò chơi</h3>
+          <p class="dialog-desc">Kỷ nguyên bóng đá đỉnh cao với công nghệ HyperMotionV mô phỏng chuyển động chân thực nhất lịch sử.</p>
+        </div>
+        <div class="dialog-col-sidebar">
+          <div class="purchase-box">
+            <div class="purchase-price-row">
+              <span class="p-label">Giá niêm yết:</span>
+              <span class="p-value">$69.99</span>
+            </div>
+            <div class="purchase-actions">
+              <label for="cart-toggle" class="btn-buy-now" style="text-align:center; cursor:pointer;">Thêm Vào Giỏ Hàng</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PURE CSS LAUNCHING SIMULATION MODALS ==================== -->
+  <div id="launch-wukong" class="modal-wrapper modal-launch">
+    <div class="launch-card animate__animated animate__zoomIn">
+      <div class="launch-spinner"></div>
+      <h3>Đang khởi chạy Black Myth: Wukong...</h3>
+      <p class="launch-sub">Tải Shader Cache DirectX 12 & Kết nối máy chủ lưu đám mây</p>
+      <div class="launch-progress-bar"><div class="launch-progress-fill"></div></div>
+      <a href="#" class="primary-btn" style="margin-top:14px; text-decoration:none;">Vào Trận Ngay (Đóng)</a>
+    </div>
+  </div>
+
+  <div id="launch-cs2" class="modal-wrapper modal-launch">
+    <div class="launch-card animate__animated animate__zoomIn">
+      <div class="launch-spinner"></div>
+      <h3>Đang khởi chạy Counter Strike 2...</h3>
+      <p class="launch-sub">Đồng bộ Cloud Saves & Khởi chạy Valve Anti-Cheat</p>
+      <div class="launch-progress-bar"><div class="launch-progress-fill"></div></div>
+      <a href="#" class="primary-btn" style="margin-top:14px; text-decoration:none;">Vào Trận Ngay (Đóng)</a>
+    </div>
+  </div>
+
+  <div id="launch-valorant" class="modal-wrapper modal-launch">
+    <div class="launch-card animate__animated animate__zoomIn">
+      <div class="launch-spinner"></div>
+      <h3>Đang khởi chạy Valorant...</h3>
+      <p class="launch-sub">Khởi động Riot Vanguard & Kết nối máy chủ</p>
+      <div class="launch-progress-bar"><div class="launch-progress-fill"></div></div>
+      <a href="#" class="primary-btn" style="margin-top:14px; text-decoration:none;">Vào Trận Ngay (Đóng)</a>
+    </div>
+  </div>
+
+  <div id="launch-paladins" class="modal-wrapper modal-launch">
+    <div class="launch-card animate__animated animate__zoomIn">
+      <div class="launch-spinner"></div>
+      <h3>Đang khởi chạy Paladins...</h3>
+      <p class="launch-sub">Đồng bộ tài khoản Hi-Rez & Tải hồ sơ người chơi</p>
+      <div class="launch-progress-bar"><div class="launch-progress-fill"></div></div>
+      <a href="#" class="primary-btn" style="margin-top:14px; text-decoration:none;">Vào Trận Ngay (Đóng)</a>
+    </div>
+  </div>
+
+  <div id="launch-tf2" class="modal-wrapper modal-launch">
+    <div class="launch-card animate__animated animate__zoomIn">
+      <div class="launch-spinner"></div>
+      <h3>Đang khởi chạy Team Fortress 2...</h3>
+      <p class="launch-sub">Tải kho đồ vũ khí & Kết nối máy chủ cộng đồng</p>
+      <div class="launch-progress-bar"><div class="launch-progress-fill"></div></div>
+      <a href="#" class="primary-btn" style="margin-top:14px; text-decoration:none;">Vào Trận Ngay (Đóng)</a>
+    </div>
+  </div>
+
+  <!-- TÍCH HỢP AOS (ANIMATE ON SCROLL) SCRIPT KHỞI TẠO -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 40
+    });
+    // Kích hoạt làm mới AOS khi cuộn container nội dung
+    const contentPanel = document.querySelector('.content-panel');
+    if (contentPanel) {
+      contentPanel.addEventListener('scroll', function() {
+        AOS.refresh();
+      });
+    }
+  </script>
+</body>
+</html>
